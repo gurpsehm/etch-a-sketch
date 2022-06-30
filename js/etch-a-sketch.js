@@ -9,8 +9,12 @@ for (let i = 0; i < 256; i++) {
 	// Clicked grid element color changed to black
 	['mousedown', 'dragover'].forEach ( evt =>
 		gridElement.addEventListener(evt, () => {
-			gridElement.style.backgroundColor = "black";
+			gridElement.style.backgroundColor = 'black';
 		})
 	);
+
+	clearBtn.addEventListener('click', () => {
+		gridElement.style.backgroundColor = '';
+	});
 }
 
