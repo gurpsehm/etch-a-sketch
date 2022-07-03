@@ -23,9 +23,13 @@ function createGrid(size){
 
 // Slider changes and displays grid size amount
 gridSize.addEventListener('input', () => {
-	rangeValue.textContent = gridSize.value + " * " + gridSize.value;
-	gridContainer.textContent = "";
-	createGrid(gridSize.value);
+	const gridSizeValue = gridSize.value;
+
+	rangeValue.textContent = gridSizeValue + ' * ' + gridSizeValue;
+	gridContainer.textContent = '';
+	gridContainer.style.gridTemplateColumns = 'repeat(' + gridSizeValue + ', auto [col-start])';
+	
+	createGrid(gridSizeValue);
 });
 
 // Creates initial grid
