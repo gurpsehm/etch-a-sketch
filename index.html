@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<link href="./style.css" rel="stylesheet">
 		<script src="./js/etch-a-sketch.js" defer></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	</head>
 	<body>
 		<div id="header"> 
@@ -15,12 +16,20 @@
 		</div>
 
 		<div id="inputContainer">
+			<button id="blackBtn">Black</button>
+
+			<button id="rainbowBtn">Rainbow</button>
+
 			<button id ="clearBtn">Clear</button>
 
 			<div id="sliderContainer">
 				<input type="range" id="gridSize" name="gridSize" min="1" max="100" value="16" step="1" autocomplete="off">
 				<p id="rangeValue">16 * 16</p>
 			</div>
+		</div>
+
+		<div id="footer">
+			<p>Copyright © <a href="https://github.com/gurpsehm" title="gurpsehm's Github link"> gurpsehm</a> <i class="fa fa-github"></i> 2022</p>
 		</div>
 	</body>
 </html>
