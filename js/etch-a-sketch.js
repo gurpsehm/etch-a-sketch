@@ -1,18 +1,36 @@
 const gridContainer = document.querySelector('#gridContainer');
 
-function createGrid(size){
+function createGrid(size) {
 	for (let i = 0; i < (size * size); i++) {
 		// Creates and displays a user selected grid
 		const gridElement = document.createElement('grid');
 		gridContainer.appendChild(gridElement);
 		gridElement.setAttribute('draggable', true);
 
-		// Clicked grid element color changed to black
 		['mousedown', 'dragover'].forEach ( evt =>
 			gridElement.addEventListener(evt, () => {
 				gridElement.style.backgroundColor = 'black';
 			})
 		);
+
+		// Clicked grid element color changed to black
+		blackBtn.addEventListener('click', () => {		
+			['mousedown', 'dragover'].forEach ( evt =>
+				gridElement.addEventListener(evt, () => {
+					gridElement.style.backgroundColor = 'black';
+				})
+			);
+		});
+
+		// Clicked grid element color changes to a random color
+		rainbowBtn.addEventListener('click', () => {
+			['mousedown', 'dragover'].forEach ( evt =>
+				gridElement.addEventListener(evt, () => {
+					const randomColor = Math.floor(Math.random()*16777215).toString(16);
+					gridElement.style.backgroundColor = '#' + randomColor;
+				})
+			);
+		});
 
 		// Removes grid background color
 		clearBtn.addEventListener('click', () => {
