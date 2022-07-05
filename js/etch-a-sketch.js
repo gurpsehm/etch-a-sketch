@@ -32,6 +32,15 @@ function createGrid(size) {
 			);
 		});
 
+		// Clicked grid element color changed to white
+		eraserBtn.addEventListener('click', () => {		
+			['mousedown', 'dragover'].forEach ( evt =>
+				gridElement.addEventListener(evt, () => {
+					gridElement.style.backgroundColor = '';
+				})
+			);
+		});
+
 		// Removes grid background color
 		clearBtn.addEventListener('click', () => {
 			gridElement.style.backgroundColor = '';
