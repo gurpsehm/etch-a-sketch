@@ -7,13 +7,14 @@ function createGrid(size) {
 		gridContainer.appendChild(gridElement);
 		gridElement.setAttribute('draggable', true);
 
+		// Clicked grid element color changed to black
 		['mousedown', 'dragover'].forEach ( evt =>
 			gridElement.addEventListener(evt, () => {
 				gridElement.style.backgroundColor = 'black';
 			})
 		);
 
-		// Clicked grid element color changed to black
+		// Button changes clicked grid element color changed to black
 		blackBtn.addEventListener('click', () => {		
 			['mousedown', 'dragover'].forEach ( evt =>
 				gridElement.addEventListener(evt, () => {
@@ -22,7 +23,7 @@ function createGrid(size) {
 			);
 		});
 
-		// Clicked grid element color changes to a random color
+		// Button changes clicked grid element color changes to a random color
 		rainbowBtn.addEventListener('click', () => {
 			['mousedown', 'dragover'].forEach ( evt =>
 				gridElement.addEventListener(evt, () => {
@@ -32,7 +33,7 @@ function createGrid(size) {
 			);
 		});
 
-		// Clicked grid element color changed to white
+		// Button changes clicked grid element color changed to white
 		eraserBtn.addEventListener('click', () => {		
 			['mousedown', 'dragover'].forEach ( evt =>
 				gridElement.addEventListener(evt, () => {
